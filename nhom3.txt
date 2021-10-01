@@ -1,0 +1,79 @@
+//// -- LEVEL 1
+//// -- Tables and References
+
+// Creating tables
+Table users as U {
+  IdUser int [pk, increment] // auto-increment
+  TaiKhoan varchar(50)
+  MatKhau varchar(50)
+  Type int
+}
+
+Table KhachHang {
+  IdKhachHang int [pk, increment]
+  name varchar(50)
+  QuocTich varchar
+  ThoiGian varchar
+  GhiChu varchar
+  
+ }
+Table HoaDon{
+   IdHoaDon int [pk, increment]
+   IdPhong int
+   IdPhieu int
+   IdKhachHang int
+   IdNhanVien int
+   SoTien int
+   NgayDen varchar
+   NgayDi varchar
+   CacDichVu varchar
+   GhiChu varchar
+ }
+Table ThongTinPhong{
+  IdPhong int [pk, increment]
+  SoPhong int
+  LoaiPhong varchar
+  GiaPhong int
+  TrangThai varchar
+  GhiChu varchar
+  
+}
+Table DichVu{
+  IdDichVu int [pk, increment]
+  TenDichVu varchar
+  GiaDichVu int
+  DonViTinh varchar
+  GhiChu varchar
+}
+Table NhanVien{
+  IdNhanVien int [pk, increment]
+  TenNhanVien varchar
+  ChucVu varchar
+  DiaChi varchar
+  GhiChu varchar
+  
+}
+Table PhieuTamTinh {
+  IdPhieu int [pk, increment]
+  IdPhong int
+  IdKhachHang int
+  IdBooking int
+  NgayDen varchar
+  NgayDi varchar
+  SoTien int
+  SoKhach int
+  
+}
+Table DichVuThem{
+  IdDichVuThem int [pk, increment]
+  IdPhieu int
+  IdDichVu varchar
+  SoLuongDV int
+  ThanhTien int
+}
+Table Booking {
+  IdBooking int [pk, increment]
+  TenBooking varchar
+  
+}
+
